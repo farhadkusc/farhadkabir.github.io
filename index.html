@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farhad Kabir — Researcher & Program Leader</title>
+    <meta name="description" content="Farhad Kabir — Program Management Professional, Cybersecurity & Post-Quantum Cryptography Researcher, AI Scholar. PMP, CRISC, MBA — USC Marshall.">
+    <meta name="keywords" content="Farhad Kabir, cybersecurity, post-quantum cryptography, AI, program management, PMP, CRISC, USC Marshall, Bangladesh Bank heist">
+    <meta property="og:title" content="Farhad Kabir — Researcher & Program Leader">
+    <meta property="og:description" content="Cybersecurity & Post-Quantum Cryptography Researcher | Program Management Professional | PMP | CRISC | MBA — USC Marshall">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://farhadkabir.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ════════════════════════════════════════════════
+           DESIGN SYSTEM & THEME
+           ════════════════════════════════════════════════ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #ffffff;
+            --bg-secondary: #fafafa;
+            --fg: #111111;
+            --fg-secondary: #444444;
+            --fg-muted: #888888;
+            --border: #e0e0e0;
+            --border-hover: #999999;
+            --accent: #111111;
+            --accent-bg: #f5f5f5;
+            --tag-bg: #f0f0f0;
+            --tag-border: #d0d0d0;
+            --link-underline: #ccc;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0d0d0d;
+            --bg-secondary: #161616;
+            --fg: #e8e8e8;
+            --fg-secondary: #b0b0b0;
+            --fg-muted: #666666;
+            --border: #2a2a2a;
+            --border-hover: #555555;
+            --accent: #ffffff;
+            --accent-bg: #1a1a1a;
+            --tag-bg: #1e1e1e;
+            --tag-border: #333333;
+            --link-underline: #444;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.3);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            transition: background var(--transition), color var(--transition);
+        }
+
+        ::selection { background: var(--fg); color: var(--bg); }
+
+        a { color: var(--fg); transition: all var(--transition); }
+        a:hover { opacity: 0.75; }
+
+        /* ════════════════════════════════════════════════
+           LAYOUT
+           ════════════════════════════════════════════════ */
+        .page-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ════════════════════════════════════════════════
+           THEME TOGGLE
+           ════════════════════════════════════════════════ */
+        .theme-toggle {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--fg);
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+            backdrop-filter: blur(12px);
+        }
+        .theme-toggle:hover { border-color: var(--fg); transform: scale(1.08); }
+        .theme-toggle svg { width: 18px; height: 18px; }
+        .icon-moon, .icon-sun { display: none; }
+        [data-theme="light"] .icon-moon { display: block; }
+        [data-theme="dark"] .icon-sun { display: block; }
+
+        /* ════════════════════════════════════════════════
+           HEADER / HERO
+           ════════════════════════════════════════════════ */
+        .header {
+            padding: 5rem 0 3rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-photo {
+            flex-shrink: 0;
+        }
+        .header-photo img {
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            filter: grayscale(100%) contrast(1.05);
+            transition: filter 0.5s ease;
+            border: 1px solid var(--border);
+        }
+        .header-photo img:hover {
+            filter: grayscale(0%) contrast(1);
+        }
+
+        .header-info {
+            flex: 1;
+        }
+        .header-name {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+        .header-tagline {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--fg-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 1.25rem;
+        }
+        .header-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.25rem;
+            align-items: center;
+        }
+        .header-links a {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.3px;
+            padding: 0.35rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            text-decoration: none;
+            color: var(--fg-secondary);
+            transition: all var(--transition);
+            white-space: nowrap;
+        }
+        .header-links a:hover {
+            border-color: var(--fg);
+            color: var(--fg);
+            background: var(--accent-bg);
+            opacity: 1;
+        }
+        .header-links .sep {
+            color: var(--fg-muted);
+            font-size: 0.6rem;
+            user-select: none;
+        }
+
+        /* ════════════════════════════════════════════════
+           SECTIONS
+           ════════════════════════════════════════════════ */
+        .section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .section:last-of-type { border-bottom: none; }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 22px;
+            background: var(--fg);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .section-subtitle {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: var(--fg);
+        }
+
+        /* ════════════════════════════════════════════════
+           ABOUT
+           ════════════════════════════════════════════════ */
+        .about-text {
+            font-size: 0.95rem;
+            color: var(--fg-secondary);
+            line-height: 1.85;
+        }
+        .about-text strong { color: var(--fg); font-weight: 600; }
+
+        /* ════════════════════════════════════════════════
+           RESEARCH INTERESTS
+           ════════════════════════════════════════════════ */
+        .interests-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .interest-tag {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.5px;
+            padding: 0.45rem 1rem;
+            background: var(--tag-bg);
+            border: 1px solid var(--tag-border);
+            border-radius: 100px;
+            color: var(--fg-secondary);
+            transition: all var(--transition);
+        }
+        .interest-tag:hover {
+            border-color: var(--fg);
+            color: var(--fg);
+        }
+
+        /* ════════════════════════════════════════════════
+           EXPERIENCE TABLE
+           ════════════════════════════════════════════════ */
+        .exp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+        .exp-table th {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--fg-muted);
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid var(--border);
+            font-weight: 500;
+        }
+        .exp-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        .exp-table tr:last-child td { border-bottom: none; }
+        .exp-table tr:hover td { background: var(--accent-bg); }
+        .exp-role { font-weight: 600; color: var(--fg); }
+        .exp-org { color: var(--fg-secondary); }
+        .exp-period { font-family: var(--font-mono); font-size: 0.78rem; color: var(--fg-muted); white-space: nowrap; }
+        .exp-duration {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.25rem 0.6rem;
+            background: var(--tag-bg);
+            border-radius: 4px;
+            color: var(--fg-muted);
+            white-space: nowrap;
+        }
+        .exp-desc {
+            font-size: 0.82rem;
+            color: var(--fg-muted);
+            margin-top: 0.4rem;
+            line-height: 1.6;
+        }
+        .exp-desc ul { list-style: none; }
+        .exp-desc ul li::before { content: '\2014\00a0'; color: var(--fg-muted); }
+
+        /* ════════════════════════════════════════════════
+           CASE STUDIES
+           ════════════════════════════════════════════════ */
+        .case-grid {
+            display: grid;
+            gap: 1.25rem;
+        }
+        .case-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            transition: all var(--transition);
+            background: var(--bg);
+            position: relative;
+            overflow: hidden;
+        }
+        .case-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .case-card-label {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--fg-muted);
+            margin-bottom: 0.75rem;
+        }
+        .case-card-number {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--border);
+            line-height: 1;
+        }
+        .case-card-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.35;
+            max-width: 85%;
+        }
+        .case-card-desc {
+            font-size: 0.88rem;
+            color: var(--fg-secondary);
+            line-height: 1.7;
+        }
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+        .case-tag {
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.25rem 0.6rem;
+            border: 1px solid var(--tag-border);
+            border-radius: 4px;
+            color: var(--fg-muted);
+        }
+
+        /* ════════════════════════════════════════════════
+           PUBLICATIONS
+           ════════════════════════════════════════════════ */
+        .pub-list { list-style: none; }
+        .pub-item {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 50px 1fr auto;
+            gap: 1rem;
+            align-items: start;
+            transition: background var(--transition);
+        }
+        .pub-item:last-child { border-bottom: none; }
+        .pub-item:hover { background: var(--accent-bg); margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem; border-radius: 8px; }
+        .pub-year {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--fg-muted);
+            padding-top: 0.15rem;
+        }
+        .pub-title {
+            font-weight: 600;
+            font-size: 0.92rem;
+            line-height: 1.45;
+            margin-bottom: 0.25rem;
+        }
+        .pub-authors {
+            font-size: 0.78rem;
+            color: var(--fg-muted);
+            margin-bottom: 0.15rem;
+        }
+        .pub-authors .self { font-weight: 600; color: var(--fg-secondary); text-decoration: underline; text-underline-offset: 2px; }
+        .pub-venue {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--fg-muted);
+        }
+        .pub-badge {
+            font-family: var(--font-mono);
+            font-size: 0.58rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.7rem;
+            border: 1px solid var(--tag-border);
+            border-radius: 4px;
+            color: var(--fg-muted);
+            white-space: nowrap;
+            align-self: start;
+            margin-top: 0.15rem;
+        }
+        .pub-link {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--fg-muted);
+            text-decoration: none;
+            border-bottom: 1px solid var(--link-underline);
+            padding-bottom: 1px;
+            margin-left: 0.5rem;
+        }
+        .pub-link:hover { color: var(--fg); border-color: var(--fg); opacity: 1; }
+        .scholar-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--fg-muted);
+            text-decoration: none;
+            margin-top: 1.5rem;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            transition: all var(--transition);
+        }
+        .scholar-cta:hover { border-color: var(--fg); color: var(--fg); opacity: 1; }
+        .scholar-cta svg { width: 14px; height: 14px; }
+
+        /* ════════════════════════════════════════════════
+           CAMERA READY GALLERY
+           ════════════════════════════════════════════════ */
+        .camera-desc {
+            font-size: 0.88rem;
+            color: var(--fg-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        .papers-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+        .paper-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all var(--transition);
+            cursor: pointer;
+            background: var(--bg);
+        }
+        .paper-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+        .paper-thumb {
+            aspect-ratio: 8.5/11;
+            background: var(--accent-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+        .paper-thumb-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--fg-muted);
+        }
+        .paper-thumb-icon svg { width: 36px; height: 36px; stroke: var(--fg-muted); opacity: 0.5; }
+        .paper-thumb-icon span { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; }
+        .paper-card-info { padding: 1rem; }
+        .paper-card-title {
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 0.3rem;
+        }
+        .paper-card-venue {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            color: var(--fg-muted);
+        }
+        .paper-card-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.52rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border: 1px solid var(--tag-border);
+            border-radius: 3px;
+            color: var(--fg-muted);
+            margin-top: 0.6rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.92);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox-inner {
+            width: 90%;
+            max-width: 800px;
+            height: 88vh;
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+        }
+        .lightbox-inner iframe { width: 100%; height: 100%; border: none; }
+        .lightbox-close {
+            position: absolute;
+            top: -44px;
+            right: 0;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: white;
+            letter-spacing: 2px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ════════════════════════════════════════════════
+           CERTIFICATIONS & EDUCATION
+           ════════════════════════════════════════════════ */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .cert-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            text-align: center;
+            transition: all var(--transition);
+        }
+        .cert-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+        .cert-badge {
+            width: 48px; height: 48px;
+            border: 1.5px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--fg);
+        }
+        .cert-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+        .cert-full {
+            font-size: 0.78rem;
+            color: var(--fg-muted);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .cert-issuer {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.5px;
+            color: var(--fg-muted);
+        }
+
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .edu-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            transition: all var(--transition);
+        }
+        .edu-card:hover { border-color: var(--border-hover); }
+        .edu-degree {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .edu-school {
+            font-size: 0.88rem;
+            color: var(--fg-secondary);
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
+        }
+        .edu-year {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--fg-muted);
+            letter-spacing: 1px;
+        }
+
+        /* ════════════════════════════════════════════════
+           TOOLS
+           ════════════════════════════════════════════════ */
+        .tools-list { list-style: none; }
+        .tools-list li {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            font-size: 0.88rem;
+            border-bottom: 1px dashed var(--border);
+            align-items: baseline;
+        }
+        .tools-list li:last-child { border-bottom: none; }
+        .tools-cat {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--fg);
+            letter-spacing: 0.5px;
+            min-width: 100px;
+            flex-shrink: 0;
+        }
+        .tools-val { color: var(--fg-secondary); }
+
+        /* ════════════════════════════════════════════════
+           CONTACT
+           ════════════════════════════════════════════════ */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .contact-item {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--fg-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .contact-item a {
+            color: var(--fg-secondary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--link-underline);
+        }
+        .contact-item a:hover { color: var(--fg); border-color: var(--fg); opacity: 1; }
+
+        /* ════════════════════════════════════════════════
+           PHOTO GALLERY
+           ════════════════════════════════════════════════ */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all var(--transition);
+        }
+        .gallery-item:hover {
+            border-color: var(--border-hover);
+            transform: scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
+        .gallery-item img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+            display: block;
+        }
+        .gallery-item:hover img { filter: grayscale(0%); }
+        .gallery-caption {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--fg-muted);
+            text-align: center;
+            padding: 0.6rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ════════════════════════════════════════════════
+           FOOTER
+           ════════════════════════════════════════════════ */
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+        footer p {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--fg-muted);
+            letter-spacing: 0.5px;
+        }
+        footer a { color: var(--fg-muted); text-decoration: underline; text-underline-offset: 2px; }
+        footer a:hover { color: var(--fg); }
+
+        /* ════════════════════════════════════════════════
+           ANIMATIONS
+           ════════════════════════════════════════════════ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ════════════════════════════════════════════════
+           RESPONSIVE
+           ════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .page-wrapper { padding: 0 1.25rem; }
+            .header { flex-direction: column; align-items: center; text-align: center; padding: 3rem 0 2rem; gap: 1.5rem; }
+            .header-photo img { width: 140px; height: 170px; }
+            .header-name { font-size: 2rem; }
+            .header-links { justify-content: center; }
+            .exp-table, .exp-table thead, .exp-table tbody, .exp-table th, .exp-table td, .exp-table tr { display: block; }
+            .exp-table thead { position: absolute; top: -9999px; left: -9999px; }
+            .exp-table td { padding: 0.5rem 0; border: none; }
+            .exp-table tr { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+            .cert-grid { grid-template-columns: 1fr; }
+            .edu-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .pub-item { grid-template-columns: 1fr; gap: 0.25rem; }
+            .pub-badge { justify-self: start; }
+            .pub-year { display: none; }
+            .papers-gallery { grid-template-columns: 1fr 1fr; }
+            .case-card-number { display: none; }
+            .tools-list li { flex-direction: column; gap: 0.25rem; }
+        }
+        @media (max-width: 480px) {
+            .papers-gallery { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-inner" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">CLOSE &times;</button>
+            <iframe id="lightboxFrame" src=""></iframe>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+
+        <!-- ═══ HEADER ═══ -->
+        <header class="header">
+            <div class="header-photo">
+                <img src="Photo.jpg" alt="Farhad Kabir">
+            </div>
+            <div class="header-info">
+                <h1 class="header-name">Farhad Kabir</h1>
+                <p class="header-tagline">Program Management Professional &middot; Cybersecurity &amp; Post-Quantum Researcher</p>
+                <div class="header-links">
+                    <a href="mailto:hello@farhadkabir.com">Email</a>
+                    <a href="https://farhadkabir.com" target="_blank">Personal Website</a>
+                    <a href="https://scholar.google.com/citations?user=sT__Qr8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+                    <a href="https://www.linkedin.com/in/farhadkabir/" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">ORCID</a>
+                    <a href="#" target="_blank">ResearchGate</a>
+                    <a href="https://github.com/FarhadKabir" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- ═══ ABOUT ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-text">
+                <p>
+                    Farhad Kabir is a <strong>program management professional</strong> and independent researcher
+                    working at the intersection of <strong>cybersecurity</strong>, <strong>post-quantum cryptography</strong>,
+                    and <strong>artificial intelligence</strong>. With over a decade of cross-disciplinary program leadership,
+                    he brings a unique lens combining strategic execution with deep technical inquiry.
+                </p>
+                <p style="margin-top:1rem;">
+                    His research explores how emerging quantum computing capabilities reshape the cybersecurity
+                    landscape, and how AI-driven systems can be hardened against both classical and quantum-era
+                    threats. He has contributed to high-profile cybersecurity investigations, including the
+                    <strong>Bangladesh Bank SWIFT heist</strong> &mdash; one of the largest cyber-enabled financial
+                    crimes in history. He holds an <strong>MBA from USC Marshall School of Business</strong> and maintains
+                    <strong>PMP</strong> and <strong>CRISC</strong> certifications.
+                </p>
+            </div>
+        </section>
+
+        <!-- ═══ RESEARCH INTERESTS ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="interests-grid">
+                <span class="interest-tag">Post-Quantum Cryptography</span>
+                <span class="interest-tag">AI for Cybersecurity</span>
+                <span class="interest-tag">Quantum-Resistant Protocols</span>
+                <span class="interest-tag">Cyber Threat Intelligence</span>
+                <span class="interest-tag">SWIFT Network Security</span>
+                <span class="interest-tag">Critical Infrastructure Protection</span>
+                <span class="interest-tag">Cryptographic Migration Strategies</span>
+                <span class="interest-tag">Risk Governance &amp; Compliance</span>
+            </div>
+        </section>
+
+        <!-- ═══ EXPERIENCE ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">Experience</h2>
+            <table class="exp-table">
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Organization</th>
+                        <th>Period</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="exp-role">Independent Researcher</div>
+                            <div class="exp-desc">
+                                <ul>
+                                    <li>Post-quantum cryptographic migration strategies</li>
+                                    <li>AI-enhanced threat detection &amp; anomaly analysis</li>
+                                    <li>Quantum-resistant protocol design</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="exp-org">Cybersecurity &middot; PQC &middot; AI</td>
+                        <td class="exp-period">2022 &ndash; Present</td>
+                        <td><span class="exp-duration">Current</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="exp-role">Senior Program Manager</div>
+                            <div class="exp-desc">
+                                <ul>
+                                    <li>Enterprise security program strategy &amp; execution</li>
+                                    <li>Multi-million dollar portfolio management</li>
+                                    <li>Risk assessment frameworks &amp; compliance</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="exp-org">Technology &amp; Cybersecurity Programs</td>
+                        <td class="exp-period">2018 &ndash; 2022</td>
+                        <td><span class="exp-duration">4 yrs</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="exp-role">Cybersecurity Analyst &amp; Investigator</div>
+                            <div class="exp-desc">
+                                <ul>
+                                    <li>Bangladesh Bank SWIFT heist &mdash; $81M case</li>
+                                    <li>999 emergency services security assessment</li>
+                                    <li>Malware analysis &amp; attribution research</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="exp-org">Financial Crime &amp; Cyber Forensics</td>
+                        <td class="exp-period">2015 &ndash; 2018</td>
+                        <td><span class="exp-duration">3 yrs</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ═══ CASE STUDIES ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">Featured Case Studies</h2>
+            <div class="case-grid">
+                <div class="case-card">
+                    <span class="case-card-number">01</span>
+                    <div class="case-card-label">Cyber Financial Crime</div>
+                    <h3 class="case-card-title">Bangladesh Bank SWIFT Heist Investigation</h3>
+                    <p class="case-card-desc">
+                        In February 2016, attackers exploited vulnerabilities in Bangladesh Bank's infrastructure
+                        to issue 35 fraudulent SWIFT transfer requests totaling nearly $1 billion. $81 million was
+                        successfully siphoned. The attack, later attributed to the Lazarus Group, exploited the absence
+                        of firewalls and unmonitored connections. Contributed to forensic analysis, post-incident
+                        assessment, and remediation framework development.
+                    </p>
+                    <div class="case-tags">
+                        <span class="case-tag">SWIFT Network</span>
+                        <span class="case-tag">Lazarus Group</span>
+                        <span class="case-tag">$81M</span>
+                        <span class="case-tag">Forensic Analysis</span>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <span class="case-card-number">02</span>
+                    <div class="case-card-label">Critical Infrastructure</div>
+                    <h3 class="case-card-title">999 Emergency Services Security</h3>
+                    <p class="case-card-desc">
+                        Security assessment and hardening of 999 emergency response systems, evaluating threat
+                        surfaces in critical public safety infrastructure and implementing resilience measures
+                        against targeted cyber attacks.
+                    </p>
+                    <div class="case-tags">
+                        <span class="case-tag">Critical Infrastructure</span>
+                        <span class="case-tag">Public Safety</span>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <span class="case-card-number">03</span>
+                    <div class="case-card-label">Research Framework</div>
+                    <h3 class="case-card-title">Post-Quantum Migration Framework</h3>
+                    <p class="case-card-desc">
+                        Developing transition strategies for organizations migrating from classical cryptographic
+                        systems to quantum-resistant alternatives, addressing the "harvest now, decrypt later"
+                        threat model.
+                    </p>
+                    <div class="case-tags">
+                        <span class="case-tag">PQC</span>
+                        <span class="case-tag">NIST Standards</span>
+                        <span class="case-tag">Migration</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ PUBLICATIONS ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">Publications</h2>
+
+            <h3 class="section-subtitle">Journal Articles</h3>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <span class="pub-year">2025</span>
+                    <div>
+                        <div class="pub-title">Post-Quantum Security Architecture for AI-Driven Surveillance Systems: Ensuring Data Protection in the Quantum Computing Era</div>
+                        <div class="pub-venue">The Journal of Supercomputing &mdash; Springer Nature</div>
+                    </div>
+                    <span class="pub-badge">Journal</span>
+                </li>
+                <li class="pub-item">
+                    <span class="pub-year">2025</span>
+                    <div>
+                        <div class="pub-title">Quantum-Enhanced Privacy-Preserving AI Frameworks for Government and Healthcare Data Protection</div>
+                        <div class="pub-venue">British Journal of Physics Studies</div>
+                    </div>
+                    <span class="pub-badge">Journal</span>
+                </li>
+                <li class="pub-item">
+                    <span class="pub-year">2024</span>
+                    <div>
+                        <div class="pub-title">Cybersecurity in the Quantum Era: Impact Assessment on Critical Infrastructure</div>
+                        <div class="pub-venue">Computers &amp; Security &mdash; Elsevier (ScienceDirect)</div>
+                    </div>
+                    <span class="pub-badge">Journal</span>
+                </li>
+                <li class="pub-item">
+                    <span class="pub-year">2024</span>
+                    <div>
+                        <div class="pub-title">AI and Quantum Cryptography: Convergence Challenges and Opportunities</div>
+                        <div class="pub-venue">Journal of Analytical Science and Technology &mdash; Springer</div>
+                    </div>
+                    <span class="pub-badge">Journal</span>
+                </li>
+                <li class="pub-item">
+                    <span class="pub-year">2023</span>
+                    <div>
+                        <div class="pub-title">Lessons Learned From the Bangladesh Bank Heist: A SWIFT Network Analysis</div>
+                        <div class="pub-venue">ISACA Journal &mdash; Volume 6</div>
+                    </div>
+                    <span class="pub-badge">Journal</span>
+                </li>
+            </ul>
+
+            <h3 class="section-subtitle">Conference Papers</h3>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <span class="pub-year">2024</span>
+                    <div>
+                        <div class="pub-title">Quantum-Resistant Authentication Protocols for IoT-Enabled Critical Systems</div>
+                        <div class="pub-venue">IEEE International Conference on Cybersecurity</div>
+                    </div>
+                    <span class="pub-badge">Conference</span>
+                </li>
+                <li class="pub-item">
+                    <span class="pub-year">2022</span>
+                    <div>
+                        <div class="pub-title">The Future of Cybersecurity in the Age of Quantum Computers</div>
+                        <div class="pub-venue">MDPI Future Internet &mdash; Special Issue</div>
+                    </div>
+                    <span class="pub-badge">Conference</span>
+                </li>
+            </ul>
+
+            <p style="font-size:0.82rem;color:var(--fg-muted);margin-top:1.5rem;font-style:italic;">
+                * Full publication list available on Google Scholar. These are placeholder entries &mdash; update with your actual publications.
+            </p>
+
+            <a href="https://scholar.google.com/citations?user=sT__Qr8AAAAJ&hl=en" class="scholar-cta" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Full Profile on Google Scholar
+            </a>
+        </section>
+
+        <!-- ═══ CAMERA READY ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">Camera Ready Papers</h2>
+            <p class="camera-desc">
+                Camera-ready versions of accepted journal and conference papers. Click to view the full document.
+            </p>
+            <div class="papers-gallery">
+                <div class="paper-card" onclick="openPaper('papers/pq-surveillance-2025.pdf')">
+                    <div class="paper-thumb">
+                        <div class="paper-thumb-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <span>PDF</span>
+                        </div>
+                    </div>
+                    <div class="paper-card-info">
+                        <div class="paper-card-title">Post-Quantum Security Architecture for AI-Driven Surveillance Systems</div>
+                        <div class="paper-card-venue">J. Supercomputing, 2025</div>
+                        <span class="paper-card-badge">Camera Ready</span>
+                    </div>
+                </div>
+                <div class="paper-card" onclick="openPaper('papers/quantum-privacy-2025.pdf')">
+                    <div class="paper-thumb">
+                        <div class="paper-thumb-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <span>PDF</span>
+                        </div>
+                    </div>
+                    <div class="paper-card-info">
+                        <div class="paper-card-title">Quantum-Enhanced Privacy-Preserving AI Frameworks</div>
+                        <div class="paper-card-venue">British J. Physics Studies, 2025</div>
+                        <span class="paper-card-badge">Camera Ready</span>
+                    </div>
+                </div>
+                <div class="paper-card" onclick="openPaper('papers/quantum-era-infra-2024.pdf')">
+                    <div class="paper-thumb">
+                        <div class="paper-thumb-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <span>PDF</span>
+                        </div>
+                    </div>
+                    <div class="paper-card-info">
+                        <div class="paper-card-title">Cybersecurity in the Quantum Era: Impact Assessment</div>
+                        <div class="paper-card-venue">Computers &amp; Security, 2024</div>
+                        <span class="paper-card-badge">Camera Ready</span>
+                    </div>
+                </div>
+                <div class="paper-card" onclick="openPaper('papers/bangladesh-bank-2023.pdf')">
+                    <div class="paper-thumb">
+                        <div class="paper-thumb-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <span>PDF</span>
+                        </div>
+                    </div>
+                    <div class="paper-card-info">
+                        <div class="paper-card-title">Lessons Learned From the Bangladesh Bank Heist</div>
+                        <div class="paper-card-venue">ISACA Journal, 2023</div>
+                        <span class="paper-card-badge">Camera Ready</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ TOOLS & TECHNOLOGIES ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">Tools &amp; Technologies</h2>
+            <ul class="tools-list">
+                <li><span class="tools-cat">Research:</span> <span class="tools-val">LaTeX, Python, MATLAB, R, TensorFlow, scikit-learn</span></li>
+                <li><span class="tools-cat">Crypto:</span> <span class="tools-val">OpenSSL, liboqs, NIST PQC Suite, Wireshark</span></li>
+                <li><span class="tools-cat">Security:</span> <span class="tools-val">Nessus, Burp Suite, Metasploit, Wazuh, MITRE ATT&amp;CK</span></li>
+                <li><span class="tools-cat">PM Tools:</span> <span class="tools-val">Jira, Confluence, MS Project, Azure DevOps, ServiceNow</span></li>
+                <li><span class="tools-cat">Cloud:</span> <span class="tools-val">AWS, Azure, GCP, Docker, Kubernetes</span></li>
+                <li><span class="tools-cat">Code:</span> <span class="tools-val">Python, Bash, SQL, JavaScript, C/C++</span></li>
+            </ul>
+        </section>
+
+        <!-- ═══ CERTIFICATIONS & EDUCATION ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">Certifications &amp; Education</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-badge">PMP</div>
+                    <div class="cert-name">PMP</div>
+                    <div class="cert-full">Project Management Professional</div>
+                    <div class="cert-issuer">PMI</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-badge">CR</div>
+                    <div class="cert-name">CRISC</div>
+                    <div class="cert-full">Certified in Risk &amp; Information Systems Control</div>
+                    <div class="cert-issuer">ISACA</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-badge">MBA</div>
+                    <div class="cert-name">MBA</div>
+                    <div class="cert-full">Master of Business Administration</div>
+                    <div class="cert-issuer">USC Marshall &mdash; 2023</div>
+                </div>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-degree">Master of Business Administration</div>
+                    <div class="edu-school">University of Southern California &mdash; Gordon S. Marshall School of Business</div>
+                    <div class="edu-year">Class of 2023</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-degree">Bachelor's Degree</div>
+                    <div class="edu-school">Computer Science / Engineering</div>
+                    <div class="edu-year"><!-- Update --></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ CONTACT ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span>Email:</span>
+                    <a href="mailto:hello@farhadkabir.com">hello@farhadkabir.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>Web:</span>
+                    <a href="https://farhadkabir.com" target="_blank">farhadkabir.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>LinkedIn:</span>
+                    <a href="https://www.linkedin.com/in/farhadkabir/" target="_blank">linkedin.com/in/farhadkabir</a>
+                </div>
+                <div class="contact-item">
+                    <span>Scholar:</span>
+                    <a href="https://scholar.google.com/citations?user=sT__Qr8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ GALLERY ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">Photo Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Photo.jpg" alt="Farhad Kabir Profile Photo">
+                    <div class="gallery-caption">Profile</div>
+                </div>
+                <!-- Add more gallery images as needed -->
+                <!--
+                <div class="gallery-item">
+                    <img src="gallery/conference.jpg" alt="Conference Presentation">
+                    <div class="gallery-caption">Conference Presentation</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/award.jpg" alt="Award Ceremony">
+                    <div class="gallery-caption">Recognition</div>
+                </div>
+                -->
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; <span id="year">2026</span> Farhad Kabir. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('fk-theme', next);
+        }
+        (function() {
+            const saved = localStorage.getItem('fk-theme');
+            if (saved) document.documentElement.setAttribute('data-theme', saved);
+        })();
+
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll reveal
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+        // Lightbox
+        function openPaper(src) {
+            if (!src || src.includes('undefined')) {
+                alert('PDF not yet uploaded. Add your camera-ready PDF to a /papers folder and update the path.');
+                return;
+            }
+            document.getElementById('lightboxFrame').src = src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.getElementById('lightboxFrame').src = '';
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
