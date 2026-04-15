@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ═══ PRIMARY SEO ═══ -->
-    <title>Farhad Kabir — Cybersecurity Researcher | AI/ML Scholar | PMP, CRISC | MBA USC Marshall</title>
+    <title>Farhad Kabir — Technology Management &amp; Digital Transformation Leader | Cybersecurity &amp; AI/ML Researcher | MBA, USC Marshall</title>
     <meta name="description" content="Md Farhad Kabir — Cybersecurity &amp; AI/ML Researcher with 18+ publications and 210+ citations. Program Management Professional (PMP, CRISC). MBA from USC Marshall School of Business. Research in financial fraud detection, blockchain security, deep learning, cloud security, and post-quantum cryptography. Shahjalal University of Science and Technology (SUST) alumnus.">
     <meta name="keywords" content="Farhad Kabir, Md Farhad Kabir, MF Kabir, cybersecurity researcher, artificial intelligence, machine learning, deep learning, post-quantum cryptography, financial fraud, money laundering detection, blockchain security, cloud security, PMP, CRISC, USC Marshall, MBA, SUST, Shahjalal University, program management, NLP, legal AI, LegalSummNet, QuantumShield, Bangladesh Bank heist, Google Scholar, IJACSA, IEEE, cyber forensics, agentic AI, explainable AI, data privacy, threat detection">
     <meta name="author" content="Md Farhad Kabir">
@@ -39,7 +39,7 @@
         "alternateName": ["Farhad Kabir", "MF Kabir"],
         "url": "https://farhadkusc.github.io/farhadkabir.github.io/",
         "image": "https://farhadkusc.github.io/farhadkabir.github.io/Photo.jpg",
-        "jobTitle": "Independent Researcher & Program Management Professional",
+        "jobTitle": "Technology Management & Digital Transformation Leader | Cybersecurity & AI/ML Researcher",
         "email": "farhadkusc@gmail.com",
         "sameAs": [
             "https://scholar.google.com/citations?user=sT__Qr8AAAAJ&hl=en",
@@ -830,6 +830,94 @@
         }
 
         /* ════════════════════════════════════════════════
+           ACADEMIC EXCELLENCE — SCORE INDICATORS
+           ════════════════════════════════════════════════ */
+        .score-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .score-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            transition: all var(--transition);
+        }
+        .score-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .score-ring {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+        }
+        .score-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+        .score-ring-bg {
+            fill: none;
+            stroke: var(--border);
+            stroke-width: 6;
+        }
+        .score-ring-fill {
+            fill: none;
+            stroke: var(--fg);
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
+            transition: stroke-dashoffset 1.5s ease;
+        }
+        .score-ring-fill.animate { stroke-dashoffset: var(--offset); }
+        .score-ring-value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .score-details { flex: 1; }
+        .score-exam {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .score-meta {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--fg-muted);
+            line-height: 1.6;
+        }
+        .score-percentile {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.25rem 0.7rem;
+            border: 1px solid var(--fg);
+            border-radius: 100px;
+            color: var(--fg);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .score-grid { grid-template-columns: 1fr; }
+            .score-ring { width: 80px; height: 80px; }
+        }
+
+        /* ════════════════════════════════════════════════
            FOOTER
            ════════════════════════════════════════════════ */
         footer {
@@ -912,7 +1000,7 @@
             </div>
             <div class="header-info">
                 <h1 class="header-name">Farhad Kabir</h1>
-                <p class="header-tagline">Transforming Organizations Through Cybersecurity, AI/ML &amp; Digital Innovation | Researcher | MBA, USC Marshall</p>
+                <p class="header-tagline">Technology Management &amp; Digital Transformation Leader | Cybersecurity &amp; AI/ML Researcher | MBA, USC Marshall</p>
                 <div class="header-links">
                     <a href="mailto:farhadkusc@gmail.com">Email</a>
                     <a href="https://farhadkabir.com" target="_blank">Personal Website</a>
@@ -930,19 +1018,34 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-text">
                 <p>
-                    Farhad Kabir is a <strong>program management professional</strong> and independent researcher
-                    working at the intersection of <strong>cybersecurity</strong>, <strong>post-quantum cryptography</strong>,
-                    and <strong>artificial intelligence</strong>. With over a decade of cross-disciplinary program leadership,
-                    he brings a unique lens combining strategic execution with deep technical inquiry.
-                </p>
-                <p style="margin-top:1rem;">
-                    His research explores how emerging quantum computing capabilities reshape the cybersecurity
-                    landscape, and how AI-driven systems can be hardened against both classical and quantum-era
-                    threats. He has contributed to high-profile cybersecurity investigations, including the
-                    <strong>Bangladesh Bank SWIFT heist</strong> &mdash; one of the largest cyber-enabled financial
-                    crimes in history. He holds an <strong>MBA from USC Marshall School of Business</strong> and maintains
+                    Farhad Kabir is a <strong>technology management scholar</strong> and independent researcher
+                    working at the intersection of <strong>cybersecurity</strong>, <strong>artificial intelligence</strong>,
+                    and <strong>digital transformation</strong>. Author of <strong>18 peer-reviewed publications</strong>
+                    with <strong>210+ citations</strong> and an <strong>h-index of 7</strong>, with active research in
+                    post-quantum cryptography, explainable AI, and financial fraud analytics. He holds an
+                    <strong>MBA from USC Marshall School of Business (Dean's Full Scholarship)</strong>, and maintains
                     <strong>PMP</strong> and <strong>CRISC</strong> certifications.
                 </p>
+            </div>
+
+            <!-- Research Impact Stats -->
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;">
+                <div class="stat-card" style="border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;transition:all var(--transition);">
+                    <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;line-height:1;">18</div>
+                    <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--fg-muted);margin-top:0.4rem;">Publications</div>
+                </div>
+                <div class="stat-card" style="border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;transition:all var(--transition);">
+                    <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;line-height:1;">210+</div>
+                    <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--fg-muted);margin-top:0.4rem;">Citations</div>
+                </div>
+                <div class="stat-card" style="border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;transition:all var(--transition);">
+                    <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;line-height:1;">7</div>
+                    <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--fg-muted);margin-top:0.4rem;">h-index</div>
+                </div>
+                <div class="stat-card" style="border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;transition:all var(--transition);">
+                    <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;line-height:1;">1</div>
+                    <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--fg-muted);margin-top:0.4rem;">Patent (DE)</div>
+                </div>
             </div>
         </section>
 
@@ -1008,7 +1111,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class="exp-role">Cybersecurity Analyst &amp; Investigator</div>
+                            <div class="exp-role">National Digital Infrastructure Program Lead</div>
                             <div class="exp-desc">
                                 <ul>
                                     <li>Bangladesh Bank SWIFT heist &mdash; $81M case</li>
@@ -1017,9 +1120,49 @@
                                 </ul>
                             </div>
                         </td>
-                        <td class="exp-org">Financial Crime &amp; Cyber Forensics</td>
+                        <td class="exp-org">Central Government Agency, Bangladesh</td>
                         <td class="exp-period">2015 &ndash; 2018</td>
                         <td><span class="exp-duration">3 yrs</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="section-subtitle" style="margin-top:3rem;">Adjunct Faculty &amp; Teaching</h3>
+            <table class="exp-table">
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Organization</th>
+                        <th>Period</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="exp-role">Adjunct Faculty &mdash; Explainable AI</div>
+                            <div class="exp-desc">
+                                <ul>
+                                    <li>Teaching explainable AI methods and applications</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="exp-org">University of Scholars</td>
+                        <td class="exp-period">May 2025 &ndash; Present</td>
+                        <td><span class="exp-duration">Current</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="exp-role">Instructor &mdash; Financial Fraud Prevention using ML/AI</div>
+                            <div class="exp-desc">
+                                <ul>
+                                    <li>Training on ML/AI techniques for financial crime detection</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="exp-org">Detective Training School, Bangladesh</td>
+                        <td class="exp-period">Dec 2024 &ndash; Apr 2025</td>
+                        <td><span class="exp-duration">5 mos</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -1255,7 +1398,7 @@
                     <div>
                         <div class="pub-title">An AI-Powered Security Device for Anomaly Detection in Open Environments</div>
                         <div class="pub-authors">N Ahmed, ME Hossain, Z Hossain, <span class="self">MF Kabir</span></div>
-                        <div class="pub-venue">DE Patent 20 2025 103 007.1</div>
+                        <div class="pub-venue">DE 20 2025 103 007.1 &mdash; German Patent Office</div>
                     </div>
                     <span class="pub-badge">Patent</span>
                 </li>
@@ -1406,6 +1549,43 @@
             </div>
         </section>
 
+        <!-- ═══ ACADEMIC EXCELLENCE ═══ -->
+        <section class="section fade-in">
+            <h2 class="section-title">Academic Excellence</h2>
+            <div class="score-grid">
+                <div class="score-card">
+                    <div class="score-ring">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="score-ring-bg" cx="50" cy="50" r="45"/>
+                            <circle class="score-ring-fill" cx="50" cy="50" r="45" style="--offset: 10.6;"/>
+                        </svg>
+                        <div class="score-ring-value">770</div>
+                    </div>
+                    <div class="score-details">
+                        <div class="score-exam">GMAT</div>
+                        <div class="score-meta">770 / 800</div>
+                        <div class="score-meta">USC Marshall MBA Admission</div>
+                        <span class="score-percentile">99th Percentile</span>
+                    </div>
+                </div>
+                <div class="score-card">
+                    <div class="score-ring">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="score-ring-bg" cx="50" cy="50" r="45"/>
+                            <circle class="score-ring-fill" cx="50" cy="50" r="45" style="--offset: 0;"/>
+                        </svg>
+                        <div class="score-ring-value">340</div>
+                    </div>
+                    <div class="score-details">
+                        <div class="score-exam">GRE</div>
+                        <div class="score-meta">340 / 340</div>
+                        <div class="score-meta">Perfect Score</div>
+                        <span class="score-percentile">100th Percentile</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ═══ CONTACT ═══ -->
         <section class="section fade-in">
             <h2 class="section-title">Contact</h2>
@@ -1494,6 +1674,17 @@
             document.body.style.overflow = '';
         }
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+        // Score ring animation on scroll
+        const scoreObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.score-ring-fill').forEach(el => el.classList.add('animate'));
+                    scoreObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.score-grid').forEach(el => scoreObs.observe(el));
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(a => {
