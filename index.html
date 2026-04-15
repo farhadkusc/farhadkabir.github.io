@@ -128,6 +128,7 @@
             width: 180px;
             height: 220px;
             object-fit: cover;
+            object-position: top;
             border-radius: var(--radius);
             filter: grayscale(100%) contrast(1.05);
             transition: filter 0.5s ease;
@@ -577,9 +578,9 @@
             transform: translateY(-2px);
         }
         .cert-badge {
-            width: 48px; height: 48px;
-            border: 1.5px solid var(--border);
-            border-radius: 50%;
+            width: 64px; height: 64px;
+            border: none;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -588,6 +589,10 @@
             font-size: 0.8rem;
             font-weight: 700;
             color: var(--fg);
+        }
+        .cert-badge img {
+            width: 100%; height: 100%;
+            object-fit: contain;
         }
         .cert-name {
             font-family: var(--font-display);
@@ -621,6 +626,11 @@
             transition: all var(--transition);
         }
         .edu-card:hover { border-color: var(--border-hover); }
+        .edu-logo {
+            width: 56px; height: 56px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
         .edu-degree {
             font-family: var(--font-display);
             font-size: 1.1rem;
@@ -762,7 +772,7 @@
         @media (max-width: 768px) {
             .page-wrapper { padding: 0 1.25rem; }
             .header { flex-direction: column; align-items: center; text-align: center; padding: 3rem 0 2rem; gap: 1.5rem; }
-            .header-photo img { width: 140px; height: 170px; }
+            .header-photo img { width: 140px; height: 170px; object-position: top; }
             .header-name { font-size: 2rem; }
             .header-links { justify-content: center; }
             .exp-table, .exp-table thead, .exp-table tbody, .exp-table th, .exp-table td, .exp-table tr { display: block; }
@@ -810,13 +820,13 @@
                 <h1 class="header-name">Farhad Kabir</h1>
                 <p class="header-tagline">MBA Graduate, USC &middot; Management of Technology &middot; Cybersecurity &middot; AI/ML Researcher</p>
                 <div class="header-links">
-                    <a href="mailto:hello@farhadkabir.com">Email</a>
+                    <a href="mailto:farhadkusc@gmail.com">Email</a>
                     <a href="https://farhadkabir.com" target="_blank">Personal Website</a>
                     <a href="https://scholar.google.com/citations?user=sT__Qr8AAAAJ&hl=en" target="_blank">Google Scholar</a>
                     <a href="https://www.linkedin.com/in/farhadkabir/" target="_blank">LinkedIn</a>
                     <a href="#" target="_blank">ORCID</a>
                     <a href="#" target="_blank">ResearchGate</a>
-                    <a href="https://github.com/FarhadKabir" target="_blank">GitHub</a>
+                    <a href="https://github.com/farhadkusc" target="_blank">GitHub</a>
                 </div>
             </div>
         </header>
@@ -1169,7 +1179,7 @@
 
         <!-- ═══ CAMERA READY ═══ -->
         <section class="section fade-in">
-            <h2 class="section-title">Camera Ready Papers</h2>
+            <h2 class="section-title">Notable Research</h2>
             <p class="camera-desc">
                 Camera-ready versions of accepted journal and conference papers. Click to view the full document.
             </p>
@@ -1273,34 +1283,37 @@
             <h2 class="section-title">Certifications &amp; Education</h2>
             <div class="cert-grid">
                 <div class="cert-card">
-                    <div class="cert-badge">PMP</div>
+                    <div class="cert-badge"><img src="https://images.credly.com/images/260e36dc-d100-45c3-852f-9d8063fa71e6/pmp-600px.png" alt="PMP Badge"></div>
                     <div class="cert-name">PMP</div>
                     <div class="cert-full">Project Management Professional</div>
-                    <div class="cert-issuer">PMI</div>
+                    <div class="cert-issuer">Project Management Institute (PMI)</div>
                 </div>
                 <div class="cert-card">
-                    <div class="cert-badge">CR</div>
+                    <div class="cert-badge"><img src="https://images.credly.com/images/2b6b58d1-cce7-4f0c-b56b-17c91f4e412f/CRISC_Badge.png" alt="CRISC Badge"></div>
                     <div class="cert-name">CRISC</div>
                     <div class="cert-full">Certified in Risk &amp; Information Systems Control</div>
                     <div class="cert-issuer">ISACA</div>
                 </div>
                 <div class="cert-card">
-                    <div class="cert-badge">MBA</div>
+                    <div class="cert-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Usc-shield.png" alt="USC Logo" style="width:48px;height:auto;"></div>
                     <div class="cert-name">MBA</div>
                     <div class="cert-full">Master of Business Administration</div>
-                    <div class="cert-issuer">USC Marshall &mdash; 2023</div>
+                    <div class="cert-issuer"><a href="https://www.marshall.usc.edu/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--link-underline);">USC Marshall School of Business</a> &mdash; 2023</div>
                 </div>
             </div>
             <div class="edu-grid">
                 <div class="edu-card">
+                    <a href="https://www.marshall.usc.edu/" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Usc-shield.png" alt="USC Logo" class="edu-logo"></a>
                     <div class="edu-degree">Master of Business Administration</div>
-                    <div class="edu-school">University of Southern California &mdash; Gordon S. Marshall School of Business</div>
+                    <div class="edu-school"><a href="https://www.marshall.usc.edu/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--link-underline);">University of Southern California &mdash; Gordon S. Marshall School of Business</a></div>
                     <div class="edu-year">Class of 2023</div>
                 </div>
                 <div class="edu-card">
-                    <div class="edu-degree">Bachelor's Degree</div>
-                    <div class="edu-school">Computer Science / Engineering</div>
-                    <div class="edu-year"><!-- Update --></div>
+                    <a href="https://www.sust.edu/" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/SUST_logo.png/200px-SUST_logo.png" alt="SUST Logo" class="edu-logo"></a>
+                    <div class="edu-degree">Bachelor of Engineering</div>
+                    <div class="edu-school"><a href="https://www.sust.edu/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--link-underline);">Shahjalal University of Science and Technology (SUST)</a></div>
+                    <div class="edu-school" style="margin-top:0.25rem;">Computer Science and Engineering</div>
+                    <div class="edu-year"></div>
                 </div>
             </div>
         </section>
@@ -1311,7 +1324,7 @@
             <div class="contact-grid">
                 <div class="contact-item">
                     <span>Email:</span>
-                    <a href="mailto:hello@farhadkabir.com">hello@farhadkabir.com</a>
+                    <a href="mailto:farhadkusc@gmail.com">farhadkusc@gmail.com</a>
                 </div>
                 <div class="contact-item">
                     <span>Web:</span>
