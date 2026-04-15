@@ -1644,16 +1644,32 @@
     </div>
 
     <script>
-        // Theme toggle
+        // Theme toggle — manual override or auto night mode (8PM–6AM)
         function toggleTheme() {
             const html = document.documentElement;
             const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
             html.setAttribute('data-theme', next);
             localStorage.setItem('fk-theme', next);
+            localStorage.setItem('fk-theme-manual', 'true');
         }
         (function() {
+            const manual = localStorage.getItem('fk-theme-manual');
             const saved = localStorage.getItem('fk-theme');
-            if (saved) document.documentElement.setAttribute('data-theme', saved);
+            if (manual && saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            } else {
+                const hour = new Date().getHours();
+                const isNight = hour >= 20 || hour < 6;
+                document.documentElement.setAttribute('data-theme', isNight ? 'dark' : 'light');
+            }
+            // Reset manual override at next auto-switch boundary
+            setInterval(function() {
+                if (!localStorage.getItem('fk-theme-manual')) {
+                    const h = new Date().getHours();
+                    const night = h >= 20 || h < 6;
+                    document.documentElement.setAttribute('data-theme', night ? 'dark' : 'light');
+                }
+            }, 60000);
         })();
 
         // Year
